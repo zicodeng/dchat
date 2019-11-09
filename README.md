@@ -4,9 +4,9 @@ A decentralized chat app built with React and Blockchain
 
 ## Playground
 
-CID: QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
+CID: QmbLbDXumD3BPYLy6XGYXyCDisjYFr5QDLn6yESB123d9Z
 
-Demo: https://ipfs.io/ipfs/QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
+Demo: https://ipfs.io/ipfs/QmbLbDXumD3BPYLy6XGYXyCDisjYFr5QDLn6yESB123d9Z
 
 ## Development
 
