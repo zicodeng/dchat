@@ -218,7 +218,7 @@ const App: React.FC = () => {
             </ul>
           </form>
         ) : (
-          'It looks like you are the only one in the room'
+          "It looks like you are the only one in the room. Let's wait for someone else join or you can open a different browser to test. It seems IPFS P2P network is kind of slow, you might have to wait a few seconds to see the other you show up"
         )}
       </section>
     </main>
