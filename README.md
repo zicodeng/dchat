@@ -6,12 +6,7 @@ A decentralized chat app built with React and Blockchain
 
 CID: QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
 
-Links
-
-- https://siderus.io/ipfs/QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
-- https://ipfs.io/ipfs/QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU (For some reasons, the public IPFS gateway is super slow)
-
-It is probably a better idea to clone this repo and run on your local machine
+Link: https://ipfs.io/ipfs/QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
 
 ## Development
 
