@@ -32,7 +32,7 @@ const App: React.FC = () => {
   const [id, setId] = useState('');
   const [room, setRoom] = useState<any>(null);
   const [roomName, setRoomName] = useState(DEFAULT_ROOM);
-  const [users, setUsers] = useState<{ [cid: string]: User }>({});
+  const [users, setUsers] = useState<{ [id: string]: User }>({});
   const [value, setValue] = useState(faker.lorem.sentence());
   const [messages, setMessages] = useState<
     {
@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
         // Hey! everyone, someone just joined, who is that?
         // btw, I am joined too
-        // The problem we are trying to solve is that who owns this CID?
+        // The problem we are trying to solve is that who owns this peer ID?
         // The approach is kind of like TCP handshake, I need other users
         // to confirm that I have actually joined the room and then
         // I can tell everyone who I am
@@ -111,7 +111,7 @@ const App: React.FC = () => {
             if (payload.newPeerId === id) {
               room.broadcast(
                 JSON.stringify({
-                  payload: { cid: id, user: USER },
+                  payload: { id, user: USER },
                   type: ActionType.ConfirmJoin,
                 }),
               );
@@ -123,7 +123,7 @@ const App: React.FC = () => {
 
           // Someone is confirming join and telling us identity
           case ActionType.ConfirmJoin:
-            setUsers(users => ({ ...users, [payload.cid]: payload.user }));
+            setUsers(users => ({ ...users, [payload.id]: payload.user }));
             break;
 
           case ActionType.Message:
@@ -166,8 +166,8 @@ const App: React.FC = () => {
       <section className="users">
         <h2>USERS</h2>
         <ul>
-          {Object.entries(users).map(([cid, { name, color }]) => (
-            <li key={cid} style={{ backgroundColor: color }}>
+          {Object.entries(users).map(([id, { name, color }]) => (
+            <li key={id} style={{ backgroundColor: color }}>
               {name}
             </li>
           ))}

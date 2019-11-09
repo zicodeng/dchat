@@ -4,7 +4,7 @@ A decentralized chat app built with React and Blockchain
 
 ## Playground
 
-CID: QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
+peer ID: QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
 
 Link: https://ipfs.io/ipfs/QmQFGEypxe7Fb3vuEGw1bNiowcji2Jn7g99TA7iEWHoJqU
 
@@ -37,8 +37,8 @@ yarn start
 
 ## Challenges
 
-### How to associate CID with user identity?
+### How to associate peer ID with user identity?
 
 Similar to TCP 3-way handshake, I need other users to confirm that I have successfully joined the room first via `peer joined` event,
-then other users will broadcast this peer CID. If it is my CID, that means I have successfully joined.
+then other users will broadcast this peer ID. If it happens to be my peer ID, that means I have successfully joined.
 Now, I can broadcast my identity to everyone in the room
