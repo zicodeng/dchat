@@ -121,9 +121,14 @@ const App: React.FC = () => {
             }
             break;
 
-          // Someone is confirming join and telling us identity
+          // My join is confired and now I can start chat, add me to users list
           case ActionType.ConfirmJoin:
-            setUsers(users => ({ ...users, [payload.id]: payload.user }));
+            const myId = payload.id;
+            setUsers(users => {
+              const newUsers = { ...users };
+              newUsers[myId] = payload.user;
+              return newUsers;
+            });
             break;
 
           case ActionType.Message:
@@ -167,8 +172,8 @@ const App: React.FC = () => {
         <h2>USERS</h2>
         <ul>
           {Object.entries(users).map(([id, { name, color }]) => (
-            <li key={id} style={{ backgroundColor: color }}>
-              {name}
+            <li key={id} style={{ color }}>
+              {name === USER.name ? `${name} (ME)` : name}
             </li>
           ))}
         </ul>
@@ -202,24 +207,24 @@ const App: React.FC = () => {
               }}
             />
             <button type="submit">SEND</button>
-            <ul>
-              {messages.map(({ user: { name, color }, message }, i) => (
-                <li key={i} className="message">
-                  <span
-                    style={{
-                      backgroundColor: color,
-                    }}
-                  >
-                    {name}
-                  </span>
-                  : <span>{message}</span>
-                </li>
-              ))}
-            </ul>
           </form>
         ) : (
           "It looks like you are the only one in the room. Let's wait for someone else join or you can open a different browser to test. It seems IPFS P2P network is kind of slow, you might have to wait a few seconds to see the other you show up"
         )}
+        <ul className="messages">
+          {messages.map(({ user: { name, color }, message }, i) => (
+            <li key={i} className="message">
+              <span
+                style={{
+                  color,
+                }}
+              >
+                {name === USER.name ? `${name} (ME)` : name}
+              </span>
+              : <span>{message}</span>
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   );

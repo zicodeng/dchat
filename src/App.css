@@ -12,8 +12,19 @@
   padding: 0 30px;
 }
 
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .input {
   width: 600px;
+}
+
+.messages {
+  overflow: auto;
+  flex: 1;
 }
 
 .message {
